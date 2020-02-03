@@ -14,7 +14,7 @@ def word_count(data_file):
 
     for line in data_file:
         line.rstrip()
-        split_paragraph = line.split(" ")
+        split_paragraph = line.split(" ")#try just .split()
         print(split_paragraph)
     #     word_occurrences[word] = word_occurrences.get(word, 0) + 1
 
