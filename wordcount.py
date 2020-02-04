@@ -1,4 +1,3 @@
-data_file = open("test.txt")
 
 
 def word_count(data_file):
@@ -10,14 +9,18 @@ def word_count(data_file):
     if word is already in dictionary, increment occurrence by one
     output = print out line by line word and occurrences """
 
+    data_file = open(data_file)
+
     word_occurrences = {}
 
     for line in data_file:
         line.rstrip()
-        split_paragraph = line.split(" ")#try just .split()
-        print(split_paragraph)
-    #     word_occurrences[word] = word_occurrences.get(word, 0) + 1
+        split_paragraph = line.split()
+
+        for word in split_paragraph:
+            word_occurrences[word] = word_occurrences.get(word, 0) + 1
+
+    for word in word_occurrences:
+        print(word, word_occurrences[word])
 
     data_file.close()
-
-    return []
